@@ -1,0 +1,65 @@
+.body-container{
+  
+height:auto;
+width: 90%;
+margin: auto;
+margin-top: 45px;
+display: flex;
+
+
+justify-content: center;
+align-items: center;
+
+
+
+border-radius: 7px;
+}
+.body-container img{
+  
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+
+
+}
+
+.body-container button{
+
+font-size: 30px;
+margin: 0px 2px;
+display: flex; 
+align-items: center; 
+justify-content: center; 
+font-size: 24px;
+cursor: pointer;
+border: none;
+color: rgb(154, 159, 158);
+background:none;
+
+opacity: 0.6;
+}
+button:hover{
+  color: rgb(44, 98, 164);
+}
+
+
+
+
+
+
+@media (min-width:800px) {
+
+  .body-container{
+    overflow: hidden;
+    height: 80vh;
+  }
+  .body-container button{
+    position: relative;
+    top: 50%;
+    left: -4%;
+    border-radius: 50%;
+    font-size: 50px;
+  }
+  
+}

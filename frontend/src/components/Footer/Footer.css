@@ -1,0 +1,63 @@
+.footer-container{
+  height: 400px;
+  width: auto;
+  background-color: rgba(10, 8, 8, 0.375);
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+.menu li{
+  list-style: none;
+  cursor: pointer;
+}
+
+
+.social-media ul{
+  display: flex;
+ flex-wrap: wrap
+}
+.social-media li{
+  list-style: none;
+  margin-left: 10px;
+  cursor: pointer;
+
+}
+.social-media li:hover{
+  border-radius: 100%;
+background-color: rgba(25, 23, 20, 0.375);
+}
+
+
+
+.queries input{
+  width: 300px;
+  height: 60px;
+  border: none;
+  border-radius: 12px;
+  padding-left: 3px;
+
+}
+.queries button{
+  height: 40px;
+  width: 70px;
+  border: none;
+  border-radius: 15px;
+  margin-left: 20px;
+  background-color: rgb(214, 115, 115);
+  cursor: pointer;
+  margin-top: 5px;
+}
+.queries button:hover{
+  background-color: rgb(107, 26, 26);
+  
+}
+.bottom{
+  background-color: rgba(202, 78, 78, 0.375);
+}
+.bottom p{
+  text-align: center;
+}
+
