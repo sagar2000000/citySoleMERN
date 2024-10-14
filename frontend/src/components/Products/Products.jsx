@@ -1,22 +1,25 @@
 import React, { useContext, useState } from 'react';
 import './Products.css';
-import { assets, category, shoes } from '../../assets/assets';
+import { category } from '../../assets/assets';
 import { StoreContext } from '../../context/StoreContext';
 
 const Products = () => {
- 
-  
- const {cartItems,addToCart,removeFromCart,getTotalCartAmount} = useContext(StoreContext);
+  const { url, cartData, addToCart, removeFromCart, itemList, selectedSize, setSelectedSize } = useContext(StoreContext);
   const [selectedId, setSelectedId] = useState(1);
+  const [size, setSize] = useState('37'); // Initialize size as '37', matching the option values
 
   const handleCategoryClick = (id) => {
     setSelectedId(id);
   };
 
+  const handleSizeChange = (e) => {
+    setSize(e.target.value);
+  };
+
   return (
     <div id='product-container'>
       <h1 style={{ color: 'red' }}>Product Category:</h1>
-      
+
       <div className='product-container'>
         {category.map((item) => (
           <div
@@ -31,16 +34,16 @@ const Products = () => {
       </div>
 
       <div className='products'>
-        {shoes.map((item,index) => (
-          item.category_id === selectedId ? (
-            <div key={item.id} className="product-items">
-              <img src={item.shoes_img} alt={item.shoes_name} />
+        {itemList.map((item) => (
+          item.category === selectedId ? (
+            <div key={item._id} className="product-items">
+              <img src={`${url}/images/${item.image}`} alt={item.name} />
               <hr />
-              <p>{item.shoes_name}</p>
+              <p>{item.name}</p>
               <hr />
-              <h3>Rs {item.shoes_price}</h3>
+              <h3>रु{item.price}</h3>
               <label htmlFor="size">Choose size:</label>
-              <select name="size" id="size">
+              <select name="size" id="size" value={size} onChange={handleSizeChange}>
                 <option value="37">37</option>
                 <option value="38">38</option>
                 <option value="39">39</option>
@@ -50,14 +53,26 @@ const Products = () => {
               </select>
 
               <div className="cart-add">
-                <button className='cart-btn' onClick={()=>removeFromCart(item._id)}>-</button>
-                
-                <h4>{cartItems[item._id]?cartItems[item._id]:"0"}</h4>
-                <button className='cart-btn' onClick={()=>addToCart(item._id)}>+</button>
+                {cartData[item._id]?.size.includes(size) ? (
+                  <button
+                    className='cart-btn'
+                    onClick={() => removeFromCart(item._id, size)}
+                  >
+                    -
+                  </button>
+                ) : null}
+                <h4>
+                  {cartData[item._id]?.size.filter(s => s === size).length || 0}
+                </h4>
+                <button
+                  className='cart-btn'
+                  onClick={() => addToCart(item._id, size)}
+                >
+                  +
+                </button>
               </div>
             </div>
           ) : null
-          
         ))}
       </div>
     </div>

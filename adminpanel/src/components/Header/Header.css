@@ -1,0 +1,7 @@
+.admin-header{
+  background-color: rgb(34, 79, 96);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}

@@ -1,0 +1,27 @@
+.panel-container{
+  display: flex;
+  
+  justify-content:start;
+}
+.item{
+  height: 91vh;
+  width: 20%;
+  background-color: #e5dc73;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.item h4:hover{
+cursor: pointer;
+color: rgb(78, 78, 144);
+text-decoration:underline;
+}
+.item a{
+cursor: pointer;
+color: rgb(78, 78, 144);
+text-decoration: none;
+
+}
+

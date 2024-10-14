@@ -9,17 +9,16 @@ display: flex;
 
 justify-content: center;
 align-items: center;
-
-
-
 border-radius: 7px;
 }
 .body-container img{
-  
+ 
   max-width: 100%;
   height: auto;
   display: block;
   object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+  
 
 
 }

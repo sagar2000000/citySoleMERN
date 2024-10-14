@@ -1,13 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState ,useContext} from 'react'
 import './Footer.css'
 import { assets } from '../../assets/assets'
+import { StoreContext } from '../../context/StoreContext'
+import axios from 'axios'
+import { toast } from 'react-toastify'
+
 const Footer = () => {
+  const {url,token} = useContext(StoreContext)
+  let newUrl = url+"/test/user/queries";
+
   const [query,setQuery]=useState('')
+
   const handleQuery=(e)=>{
     e.preventDefault();
     console.log(query)
-    setQuery('')
+     const response = axios.post(newUrl,{queries:query},{headers:{token}})
+     toast.success("Queries sent successfully")
+ console.log(response.data)
 
+    setQuery('')
 
   }
   return (

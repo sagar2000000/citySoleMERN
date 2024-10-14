@@ -11,6 +11,7 @@ import emi from './emi.png'
 import linkedin_icon from './linkedin_icon.png'
 import facebook_icon from './facebook_icon.png'
 import twitter_icon from './twitter_icon.png'
+import logout_icon from './logout_icon.png'
 
 import nike_category from './nike_category.png'
 import adidas_category from './adidas_category.png'
@@ -52,7 +53,8 @@ export  const assets={
  adidasoriginal,
  facebook_icon,
  linkedin_icon,
- twitter_icon
+ twitter_icon,
+ logout_icon
 
 }
 
